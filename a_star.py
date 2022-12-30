@@ -1,5 +1,4 @@
 import sys
-from copy import deepcopy
 from pprint import pprint
 from queue import PriorityQueue
 
@@ -24,7 +23,7 @@ def a_star():
     start = input('Start node: ')
     goal = input('Goal node: ')
     pq = PriorityQueue()
-    pq.put((heuristics[start]+0, (start, None)))
+    pq.put((heuristics[start] + 0, (start, None)))
     popped = []
     routes = {}
     estimated_cost = {start: 0}
@@ -46,7 +45,7 @@ def a_star():
                     estimated_cost[to] = new_cost
                     routes[to] = routes.get(current, []) + [current]
 
-                pq.put((cost+heuristics[to], (to, current)))
+                pq.put((cost + heuristics[to], (to, current)))
     # print(estimated_cost)
     # print(routes)
     print(f'Found {goal}')
