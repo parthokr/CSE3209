@@ -27,8 +27,8 @@ def ucs():
     estimated_cost = {start: 0}
     while not pq.empty():
         current, prev = pq.get()[1]  # pop from the heap
-        if current not in popped:  # if the popped node is not already popped
-            popped.append(current)
+        if (current, estimated_cost[current]) not in popped:  # if the popped node is not already popped
+            popped.append((current, estimated_cost[current]))
             # tmp = deepcopy(routes.get(prev, []))
             # if prev is not None:
             #     tmp.append(prev)
