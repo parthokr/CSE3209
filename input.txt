@@ -1,4 +1,4 @@
-5
+7
 7
 S A B C D E G
 7
@@ -71,6 +71,42 @@ C G 5
 C F 7
 F D 2
 F G 8
+E G 7
+S
+G
+8
+A B C D E F G H
+10
+A B 1
+A C 2
+B D 5
+B E 6
+D H 4
+E H 2
+C F 7
+C G 5
+F H 2
+G H 5
+A
+H
+8
+S A B C D E F G
+16
+S A 5
+S B 9
+S D 6
+A G 9
+A B 3
+B A 2
+D S 1
+B C 1
+C S 6
+D C 2
+C G 5
+C F 7
+F D 2
+F G 8
+D E 2
 E G 7
 S
 G

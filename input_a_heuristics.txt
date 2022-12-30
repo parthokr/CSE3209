@@ -1,4 +1,4 @@
-7
+10
 7
 S 5
 A 3
@@ -130,6 +130,72 @@ C G 5
 C F 7
 F D 2
 F G 8
+E G 7
+S
+G
+6
+S 11
+B 6
+C 99
+D 1
+E 7
+G 0
+6
+S B 2
+S E 3
+E D 6
+D G 1
+B C 1
+B G 9
+S
+G
+8
+A 0
+B 8
+C 9
+D 2
+E 2
+F 1
+G 4
+H 0
+10
+A B 1
+A C 2
+B D 5
+B E 6
+D H 4
+E H 2
+C F 7
+C G 5
+F H 2
+G H 5
+A
+H
+8
+S 5
+A 7
+B 3
+C 4
+D 6
+E 5
+F 6
+G 0
+16
+S A 5
+S B 9
+S D 6
+A G 9
+A B 3
+B A 2
+D S 1
+B C 1
+C S 6
+D C 2
+C G 5
+C F 7
+F D 2
+F G 8
+D E 2
 E G 7
 S
 G
