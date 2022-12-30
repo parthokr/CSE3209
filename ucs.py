@@ -29,17 +29,19 @@ def ucs():
         current, prev = pq.get()[1]  # pop from the heap
         if current not in popped:  # if the popped node is not already popped
             popped.append(current)
-            tmp = deepcopy(routes.get(prev, []))
-            if prev is not None:
-                tmp.append(prev)
-            routes[current] = tmp
+            # tmp = deepcopy(routes.get(prev, []))
+            # if prev is not None:
+            #     tmp.append(prev)
+            # routes[current] = tmp
             for to, cost in graph.get(current, []):  # expand current node
                 old_cost = estimated_cost.get(to, sys.maxsize)  # default is inf
                 new_cost = estimated_cost.get(current) + int(cost)  # eval new cost
                 if new_cost < old_cost:  # if new cost is less than the previous one
-                    estimated_cost[to] = new_cost
-                    routes[to] = routes.get(current, []) + [current]
-
+                    print(f'Min {to} for {current}')
+                    # print(routes.get(to, []))
+                    # print(routes.get(current, []))
+                    estimated_cost[to] = new_cost # set new minimized cost
+                    routes[to] = routes.get(current, []) + [current]  # update route
 
                 pq.put((cost, (to, current)))
     # print(estimated_cost)
@@ -49,6 +51,8 @@ def ucs():
     for i in range(len(goal_route)):
         print(f'{goal_route[i]}', end=["-->", "\n"][i == len(goal_route) - 1])
     print(estimated_cost[goal])
+    print(estimated_cost)
+    print(routes)
 
 if __name__ == '__main__':
     sys.stdin = open('input.txt', 'r')

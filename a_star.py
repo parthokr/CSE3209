@@ -33,10 +33,10 @@ def a_star():
         if current not in popped:  # if the popped node is not already popped
             print(f'Selected {current, prev}')
             popped.append(current)
-            tmp = deepcopy(routes.get(prev, []))
-            if prev is not None:
-                tmp.append(prev)
-            routes[current] = tmp
+            # tmp = deepcopy(routes.get(prev, []))
+            # if prev is not None:
+            #     tmp.append(prev)
+            # routes[current] = tmp
             print(routes)
             for to, cost in graph.get(current, []):  # expand current node
                 old_cost = estimated_cost.get(to, sys.maxsize)  # default is inf
@@ -44,7 +44,7 @@ def a_star():
                 if new_cost < old_cost:  # if new cost is less than the previous one
                     # print(f'Minimizing {to}')
                     estimated_cost[to] = new_cost
-                    routes[to] = routes.get(current) + [current]
+                    routes[to] = routes.get(current, []) + [current]
 
                 pq.put((cost+heuristics[to], (to, current)))
     # print(estimated_cost)

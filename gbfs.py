@@ -33,17 +33,16 @@ def gbfs():
         if current not in popped:  # if the popped node is not already popped
             print(f'Selected {current, prev}')
             popped.append(current)
-            tmp = deepcopy(routes.get(prev, []))
-            if prev is not None:
-                tmp.append(prev)
-            routes[current] = tmp
+            # tmp = deepcopy(routes.get(prev, []))
+            # if prev is not None:
+            #     tmp.append(prev)
+            # routes[current] = tmp
             for to, cost in graph.get(current, []):  # expand current node
                 old_cost = estimated_cost.get(to, sys.maxsize)  # default is inf
                 new_cost = estimated_cost.get(current) + cost  # eval new cost
                 if new_cost < old_cost:  # if new cost is less than the previous one
                     estimated_cost[to] = new_cost
-                    routes[to] = routes.get(current) + [current]
-
+                    routes[to] = routes.get(current, []) + [current]
 
                 pq.put((heuristics[to], (to, current)))
             if current == goal:

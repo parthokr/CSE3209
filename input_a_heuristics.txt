@@ -1,4 +1,4 @@
-5
+6
 7
 S 5
 A 3
@@ -87,3 +87,22 @@ D G 5
 A G 5
 S
 G
+6
+S 5
+A 3
+B 4
+C 2
+D 6
+G 0
+8
+S A 1
+S G 10
+A B 2
+A C 1
+B D 5
+C D 3
+C G 4
+D G 2
+S
+G
+
