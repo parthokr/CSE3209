@@ -1,5 +1,4 @@
 import sys
-from copy import deepcopy
 from pprint import pprint
 from queue import PriorityQueue
 
@@ -30,9 +29,9 @@ def gbfs():
     estimated_cost = {start: 0}
     while not pq.empty():
         current, prev = pq.get()[1]  # pop from the heap
-        if current not in popped:  # if the popped node is not already popped
+        if (current, cost) not in popped:  # if the popped node is not already popped
             print(f'Selected {current, prev}')
-            popped.append(current)
+            popped.append((current, cost))
             # tmp = deepcopy(routes.get(prev, []))
             # if prev is not None:
             #     tmp.append(prev)
