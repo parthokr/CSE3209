@@ -1,5 +1,4 @@
 import sys
-from copy import deepcopy
 from pprint import pprint
 from queue import PriorityQueue
 
@@ -40,7 +39,7 @@ def ucs():
                     print(f'Min {to} for {current}')
                     # print(routes.get(to, []))
                     # print(routes.get(current, []))
-                    estimated_cost[to] = new_cost # set new minimized cost
+                    estimated_cost[to] = new_cost  # set new minimized cost
                     routes[to] = routes.get(current, []) + [current]  # update route
 
                 pq.put((cost, (to, current)))
@@ -53,6 +52,7 @@ def ucs():
     print(estimated_cost[goal])
     print(estimated_cost)
     print(routes)
+
 
 if __name__ == '__main__':
     sys.stdin = open('input.txt', 'r')
