@@ -2,8 +2,6 @@ import sys
 from copy import deepcopy
 from pprint import pprint
 
-sys.stdin = open('input.txt', 'r')
-
 def dfs():
     v = int(input("No of nodes: "))
     labels = input("Node labels: ").split(' ')
@@ -24,7 +22,7 @@ def dfs():
     visited = [] # marking already visited node to get around cyclic graph
     routes = {}
     estimated_cost = {}
-    max_depth = 100
+    max_depth = 5
     while len(stack) > 0:
         # print(stack)
         current, depth = stack.pop()
@@ -60,6 +58,7 @@ def dfs():
 
 
 if __name__ == '__main__':
+    sys.stdin = open('input.txt', 'r')
     t = int(input())
     for _ in range(t):
         dfs()
